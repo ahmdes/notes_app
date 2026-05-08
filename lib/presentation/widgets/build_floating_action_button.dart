@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/behaviour/resources/colors_manager.dart';
+import 'package:notes_app/behaviour/resources/constant_manager.dart';
 import 'package:notes_app/presentation/widgets/build_text_field.dart';
+import 'package:notes_app/presentation/widgets/note.dart';
 
-class BuildFloatingActionButton extends StatelessWidget {
+class BuildFloatingActionButton extends StatefulWidget {
   const BuildFloatingActionButton({super.key});
 
+  @override
+  State<BuildFloatingActionButton> createState() =>
+      _BuildFloatingActionButtonState();
+}
+
+class _BuildFloatingActionButtonState extends State<BuildFloatingActionButton> {
+  TextEditingController titleController = TextEditingController();
+  TextEditingController contentController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
@@ -26,9 +36,13 @@ class BuildFloatingActionButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Spacer(),
-              BuildTextField(label: "Title"),
+              BuildTextField(label: "Title", controller: titleController),
               Spacer(),
-              BuildTextField(label: "Content", maxLines: 8),
+              BuildTextField(
+                label: "Content",
+                maxLines: 8,
+                controller: contentController,
+              ),
               Spacer(flex: 3),
               Container(
                 height: 50,
@@ -38,7 +52,16 @@ class BuildFloatingActionButton extends StatelessWidget {
                   color: ColorsManager.blue0,
                 ),
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    ConstantManager.notesList.add(
+                      Note(
+                        description: contentController.text,
+                        title: titleController.text,
+                      ),
+                    );
+                    Navigator.pop(context);
+                    setState(() {});
+                  },
                   child: const Text(
                     "Add",
                     style: TextStyle(

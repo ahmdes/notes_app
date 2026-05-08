@@ -2,12 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/behaviour/resources/colors_manager.dart';
 
 class BuildTextField extends StatelessWidget {
-  const BuildTextField({super.key, required this.label, this.maxLines});
+  const BuildTextField({
+    super.key,
+    required this.label,
+    this.maxLines,
+    required this.controller,
+  });
   final String label;
   final int? maxLines;
+  final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       maxLines: maxLines,
       decoration: InputDecoration(
         label: Text(

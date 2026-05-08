@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/presentation/widgets/note.dart';
+import 'package:notes_app/behaviour/resources/constant_manager.dart';
 
 class BuildingNotesListView extends StatelessWidget {
   const BuildingNotesListView({super.key});
@@ -9,12 +9,9 @@ class BuildingNotesListView extends StatelessWidget {
     return ListView.builder(
       padding: const EdgeInsets.all(12),
       itemBuilder: (context, index) {
-        return const Note(
-          title: "Flutter Tips",
-          description: "Build Your career with Ahmed Daoud",
-        );
+        return ConstantManager.notesList[index];
       },
-      itemCount: 5,
+      itemCount: ConstantManager.notesList.length,
     );
   }
 }
