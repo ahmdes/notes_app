@@ -9,9 +9,9 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
-      body: BuildingNotesListView(),
-      floatingActionButton: BuildFloatingActionButton(),
+      appBar: const CustomAppBar(),
+      body: const BuildingNotesListView(),
+      floatingActionButton: const BuildFloatingActionButton(),
     );
   }
 }

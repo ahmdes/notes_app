@@ -12,7 +12,7 @@ class BuildFloatingActionButton extends StatelessWidget {
       onPressed: () {
         showBottomSheet(context);
       },
-      child: Icon(Icons.add, color: ColorsManager.black),
+      child: const Icon(Icons.add, color: ColorsManager.black),
     );
   }
 
@@ -39,12 +39,12 @@ class BuildFloatingActionButton extends StatelessWidget {
                 ),
                 child: TextButton(
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     "Add",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w400,
-                      color: Colors.black,
+                      color: ColorsManager.black,
                     ),
                   ),
                 ),

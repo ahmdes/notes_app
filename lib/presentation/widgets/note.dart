@@ -17,36 +17,11 @@ class Note extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-            ListTile(
-              contentPadding: EdgeInsets.all(30),
-              title: Text(
-                title,
-                style: TextStyle(
-                  color: ColorsManager.black,
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-              subtitle: Padding(
-                padding: const EdgeInsets.only(top: 15),
-                child: Text(
-                  description,
-                  style: TextStyle(
-                    color: ColorsManager.black0,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ),
-              trailing: IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.delete, size: 40, color: ColorsManager.black),
-              ),
-            ),
+            buildingListTile(),
 
             Padding(
               padding: const EdgeInsets.only(right: 20, bottom: 10),
-              child: Text(
+              child: const Text(
                 "4 may 2026",
                 style: TextStyle(
                   color: ColorsManager.black0,
@@ -57,6 +32,35 @@ class Note extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  ListTile buildingListTile() {
+    return ListTile(
+      contentPadding: EdgeInsets.all(30),
+      title: Text(
+        title,
+        style: TextStyle(
+          color: ColorsManager.black,
+          fontSize: 25,
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+      subtitle: Padding(
+        padding: const EdgeInsets.only(top: 15),
+        child: Text(
+          description,
+          style: TextStyle(
+            color: ColorsManager.black0,
+            fontSize: 20,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+      ),
+      trailing: IconButton(
+        onPressed: () {},
+        icon: Icon(Icons.delete, size: 40, color: ColorsManager.black),
       ),
     );
   }
