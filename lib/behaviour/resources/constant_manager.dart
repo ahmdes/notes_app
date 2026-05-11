@@ -1,5 +1,6 @@
-import 'package:notes_app/presentation/widgets/note.dart';
+import 'package:notes_app/behaviour/models/note_model.dart';
 
 class ConstantManager {
-  static List<Note> notesList = [];
+  static List<NoteModel> notesList = [];
+  // static int globalNoteIndex = 0;
 }

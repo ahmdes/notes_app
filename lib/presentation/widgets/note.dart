@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/behaviour/models/note_model.dart';
 import 'package:notes_app/behaviour/resources/colors_manager.dart';
+import 'package:notes_app/behaviour/resources/constant_manager.dart';
 
 class Note extends StatelessWidget {
-  const Note({super.key, required this.description, required this.title});
-  final String title, description;
+  const Note({super.key, required this.noteModel, required this.noteIndex});
+
+  final NoteModel noteModel;
+  final int noteIndex;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -40,7 +44,7 @@ class Note extends StatelessWidget {
     return ListTile(
       contentPadding: EdgeInsets.all(30),
       title: Text(
-        title,
+        noteModel.title,
         style: TextStyle(
           color: ColorsManager.black,
           fontSize: 25,
@@ -50,7 +54,7 @@ class Note extends StatelessWidget {
       subtitle: Padding(
         padding: const EdgeInsets.only(top: 15),
         child: Text(
-          description,
+          noteModel.component,
           style: TextStyle(
             color: ColorsManager.black0,
             fontSize: 20,
@@ -59,7 +63,9 @@ class Note extends StatelessWidget {
         ),
       ),
       trailing: IconButton(
-        onPressed: () {},
+        onPressed: () {
+          ConstantManager.notesList.removeAt(noteIndex);
+        },
         icon: Icon(Icons.delete, size: 40, color: ColorsManager.black),
       ),
     );

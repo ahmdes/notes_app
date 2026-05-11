@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:notes_app/behaviour/models/note_model.dart';
 import 'package:notes_app/behaviour/resources/colors_manager.dart';
 import 'package:notes_app/behaviour/resources/constant_manager.dart';
 import 'package:notes_app/presentation/widgets/build_text_field.dart';
-import 'package:notes_app/presentation/widgets/note.dart';
 
 class BuildFloatingActionButton extends StatefulWidget {
   const BuildFloatingActionButton({super.key});
-
   @override
   State<BuildFloatingActionButton> createState() =>
       _BuildFloatingActionButtonState();
@@ -54,13 +53,12 @@ class _BuildFloatingActionButtonState extends State<BuildFloatingActionButton> {
                 child: TextButton(
                   onPressed: () {
                     ConstantManager.notesList.add(
-                      Note(
-                        description: contentController.text,
+                      NoteModel(
+                        component: contentController.text,
                         title: titleController.text,
                       ),
                     );
                     Navigator.pop(context);
-                    setState(() {});
                   },
                   child: const Text(
                     "Add",
