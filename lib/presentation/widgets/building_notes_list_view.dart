@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/behaviour/resources/constant_manager.dart';
+import 'package:notes_app/core/constants/app_lists.dart';
 import 'package:notes_app/presentation/widgets/note.dart';
 
 class BuildingNotesListView extends StatelessWidget {
@@ -10,12 +10,9 @@ class BuildingNotesListView extends StatelessWidget {
     return ListView.builder(
       padding: const EdgeInsets.all(12),
       itemBuilder: (context, index) {
-        return Note(
-          noteModel: ConstantManager.notesList[index],
-          noteIndex: index,
-        );
+        return Note(noteModel: AppLists.notesList[index], noteIndex: index);
       },
-      itemCount: ConstantManager.notesList.length,
+      itemCount: AppLists.notesList.length,
     );
   }
 }

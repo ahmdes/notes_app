@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/behaviour/models/note_model.dart';
-import 'package:notes_app/behaviour/resources/colors_manager.dart';
-import 'package:notes_app/behaviour/resources/constant_manager.dart';
+import 'package:notes_app/core/constants/colors_manager.dart';
+import 'package:notes_app/core/constants/app_lists.dart';
 import 'package:notes_app/presentation/widgets/build_text_field.dart';
 
 class BuildFloatingActionButton extends StatefulWidget {
@@ -52,7 +52,7 @@ class _BuildFloatingActionButtonState extends State<BuildFloatingActionButton> {
                 ),
                 child: TextButton(
                   onPressed: () {
-                    ConstantManager.notesList.add(
+                    AppLists.notesList.add(
                       NoteModel(
                         component: contentController.text,
                         title: titleController.text,

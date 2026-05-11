@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:notes_app/behaviour/models/note_model.dart';
-import 'package:notes_app/behaviour/resources/colors_manager.dart';
-import 'package:notes_app/behaviour/resources/constant_manager.dart';
+import 'package:notes_app/core/constants/colors_manager.dart';
+import 'package:notes_app/core/constants/app_lists.dart';
+import 'package:notes_app/core/utils/date_manager.dart';
 
 class Note extends StatelessWidget {
   const Note({super.key, required this.noteModel, required this.noteIndex});
@@ -25,8 +26,8 @@ class Note extends StatelessWidget {
 
             Padding(
               padding: const EdgeInsets.only(right: 20, bottom: 10),
-              child: const Text(
-                "4 may 2026",
+              child: Text(
+                DateManager.getCurrentDate(),
                 style: TextStyle(
                   color: ColorsManager.black0,
                   fontSize: 15,
@@ -64,7 +65,7 @@ class Note extends StatelessWidget {
       ),
       trailing: IconButton(
         onPressed: () {
-          ConstantManager.notesList.removeAt(noteIndex);
+          AppLists.notesList.removeAt(noteIndex);
         },
         icon: Icon(Icons.delete, size: 40, color: ColorsManager.black),
       ),

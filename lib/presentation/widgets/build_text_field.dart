@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:notes_app/behaviour/resources/colors_manager.dart';
+import 'package:notes_app/core/constants/colors_manager.dart';
 
 class BuildTextField extends StatelessWidget {
   const BuildTextField({
