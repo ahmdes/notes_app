@@ -5,7 +5,9 @@ import 'package:notes_app/core/constants/app_lists.dart';
 import 'package:notes_app/presentation/widgets/build_text_field.dart';
 
 class BuildFloatingActionButton extends StatefulWidget {
-  const BuildFloatingActionButton({super.key});
+  const BuildFloatingActionButton({super.key, required this.updateNotesHome});
+  final VoidCallback updateNotesHome;
+
   @override
   State<BuildFloatingActionButton> createState() =>
       _BuildFloatingActionButtonState();
@@ -59,6 +61,7 @@ class _BuildFloatingActionButtonState extends State<BuildFloatingActionButton> {
                       ),
                     );
                     Navigator.pop(context);
+                    widget.updateNotesHome();
                   },
                   child: const Text(
                     "Add",

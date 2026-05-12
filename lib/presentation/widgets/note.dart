@@ -5,10 +5,16 @@ import 'package:notes_app/core/constants/app_lists.dart';
 import 'package:notes_app/core/utils/date_manager.dart';
 
 class Note extends StatelessWidget {
-  const Note({super.key, required this.noteModel, required this.noteIndex});
+  const Note({
+    super.key,
+    required this.noteModel,
+    required this.noteIndex,
+    required this.updateNotesHome,
+  });
 
   final NoteModel noteModel;
   final int noteIndex;
+  final VoidCallback updateNotesHome;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -66,6 +72,7 @@ class Note extends StatelessWidget {
       trailing: IconButton(
         onPressed: () {
           AppLists.notesList.removeAt(noteIndex);
+          updateNotesHome();
         },
         icon: Icon(Icons.delete, size: 40, color: ColorsManager.black),
       ),
