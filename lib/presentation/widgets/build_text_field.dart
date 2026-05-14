@@ -22,11 +22,11 @@ class BuildTextField extends StatelessWidget {
           style: TextStyle(fontSize: 15, fontWeight: FontWeight.w400),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: ColorsManager.blue0, width: 3),
+          borderSide: BorderSide(color: ColorsManager.kBlue0, width: 3),
           borderRadius: BorderRadius.circular(15),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: ColorsManager.blue0, width: 3),
+          borderSide: BorderSide(color: ColorsManager.kBlue0, width: 3),
           borderRadius: BorderRadius.circular(15),
         ),
       ),

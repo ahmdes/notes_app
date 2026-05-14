@@ -27,11 +27,11 @@ class _BuildFloatingActionButtonState extends State<BuildFloatingActionButton> {
   @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
-      backgroundColor: ColorsManager.blue0,
+      backgroundColor: ColorsManager.kBlue0,
       onPressed: () {
         showBottomSheet(context);
       },
-      child: const Icon(Icons.add, color: ColorsManager.black),
+      child: const Icon(Icons.add, color: ColorsManager.kBlack),
     );
   }
 
@@ -58,7 +58,7 @@ class _BuildFloatingActionButtonState extends State<BuildFloatingActionButton> {
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: ColorsManager.blue0,
+                  color: ColorsManager.kBlue0,
                 ),
                 child: TextButton(
                   onPressed: () {
@@ -78,7 +78,7 @@ class _BuildFloatingActionButtonState extends State<BuildFloatingActionButton> {
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w400,
-                      color: ColorsManager.black,
+                      color: ColorsManager.kBlack,
                     ),
                   ),
                 ),

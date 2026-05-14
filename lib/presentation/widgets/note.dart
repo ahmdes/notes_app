@@ -22,7 +22,7 @@ class Note extends StatelessWidget {
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: ColorsManager.yellow,
+          color: ColorsManager.kYellow,
           borderRadius: BorderRadius.circular(15),
         ),
         child: Column(
@@ -35,7 +35,7 @@ class Note extends StatelessWidget {
               child: Text(
                 DateManager.getCurrentDate(),
                 style: TextStyle(
-                  color: ColorsManager.black0,
+                  color: ColorsManager.kBlack0,
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
                 ),
@@ -53,7 +53,7 @@ class Note extends StatelessWidget {
       title: Text(
         noteModel.title,
         style: TextStyle(
-          color: ColorsManager.black,
+          color: ColorsManager.kBlack,
           fontSize: 25,
           fontWeight: FontWeight.w600,
         ),
@@ -63,7 +63,7 @@ class Note extends StatelessWidget {
         child: Text(
           noteModel.component,
           style: TextStyle(
-            color: ColorsManager.black0,
+            color: ColorsManager.kBlack0,
             fontSize: 20,
             fontWeight: FontWeight.w400,
           ),
@@ -74,7 +74,7 @@ class Note extends StatelessWidget {
           AppLists.notesList.removeAt(noteIndex);
           updateNotesHome();
         },
-        icon: Icon(Icons.delete, size: 40, color: ColorsManager.black),
+        icon: Icon(Icons.delete, size: 40, color: ColorsManager.kBlack),
       ),
     );
   }

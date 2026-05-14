@@ -10,7 +10,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: const Text(
         "Notes",
         style: TextStyle(
-          color: ColorsManager.white,
+          color: ColorsManager.kWhite,
           fontSize: 25,
           fontWeight: FontWeight.w600,
         ),
@@ -24,12 +24,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               width: 40,
               height: 40,
               decoration: BoxDecoration(
-                color: ColorsManager.black0,
+                color: ColorsManager.kBlack0,
                 borderRadius: BorderRadius.circular(10),
               ),
               child: IconButton(
                 onPressed: () {},
-                icon: Icon(Icons.search, size: 25, color: ColorsManager.white),
+                icon: Icon(Icons.search, size: 25, color: ColorsManager.kWhite),
               ),
             ),
           ),
