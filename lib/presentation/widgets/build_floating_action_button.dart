@@ -17,6 +17,14 @@ class _BuildFloatingActionButtonState extends State<BuildFloatingActionButton> {
   TextEditingController titleController = TextEditingController();
   TextEditingController contentController = TextEditingController();
   @override
+  void dispose() {
+    // TODO: implement dispose
+    contentController.dispose();
+    titleController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return FloatingActionButton(
       backgroundColor: ColorsManager.blue0,
@@ -60,6 +68,8 @@ class _BuildFloatingActionButtonState extends State<BuildFloatingActionButton> {
                         title: titleController.text,
                       ),
                     );
+                    contentController.clear();
+                    titleController.clear();
                     Navigator.pop(context);
                     widget.updateNotesHome();
                   },
