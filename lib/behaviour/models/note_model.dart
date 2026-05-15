@@ -1,8 +1,8 @@
 class NoteModel {
-  String title, component;
+  String title, content;
   // int index;
   NoteModel({
-    required this.component,
+    required this.content,
     // required this.index,
     required this.title,
   });

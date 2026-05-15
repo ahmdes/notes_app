@@ -3,6 +3,7 @@ import 'package:notes_app/behaviour/models/note_model.dart';
 import 'package:notes_app/core/constants/colors_manager.dart';
 import 'package:notes_app/core/constants/app_lists.dart';
 import 'package:notes_app/core/utils/date_manager.dart';
+import 'package:notes_app/presentation/views/edit_note.dart';
 
 class Note extends StatelessWidget {
   const Note({
@@ -19,29 +20,44 @@ class Note extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Container(
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: ColorsManager.kYellow,
-          borderRadius: BorderRadius.circular(15),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.end,
-          children: [
-            buildingListTile(),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) {
+                return EditNote(
+                  noteModel: noteModel,
+                  updateHome: updateNotesHome,
+                );
+              },
+            ),
+          );
+        },
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: ColorsManager.kYellow,
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              buildingListTile(),
 
-            Padding(
-              padding: const EdgeInsets.only(right: 20, bottom: 10),
-              child: Text(
-                DateManager.getCurrentDate(),
-                style: TextStyle(
-                  color: ColorsManager.kBlack0,
-                  fontSize: 15,
-                  fontWeight: FontWeight.w600,
+              Padding(
+                padding: const EdgeInsets.only(right: 20, bottom: 10),
+                child: Text(
+                  DateManager.getCurrentDate(),
+                  style: TextStyle(
+                    color: ColorsManager.kBlack0,
+                    fontSize: 15,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -61,7 +77,7 @@ class Note extends StatelessWidget {
       subtitle: Padding(
         padding: const EdgeInsets.only(top: 15),
         child: Text(
-          noteModel.component,
+          noteModel.content,
           style: TextStyle(
             color: ColorsManager.kBlack0,
             fontSize: 20,

@@ -64,7 +64,7 @@ class _BuildFloatingActionButtonState extends State<BuildFloatingActionButton> {
                   onPressed: () {
                     AppLists.notesList.add(
                       NoteModel(
-                        component: contentController.text,
+                        content: contentController.text,
                         title: titleController.text,
                       ),
                     );

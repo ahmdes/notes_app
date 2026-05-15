@@ -14,7 +14,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(),
+      appBar: CustomAppBar(title: 'Notes', icon: Icons.search, onClick: () {}),
       body: BuildingNotesListView(
         updateNotesHome: () {
           setState(() {});
